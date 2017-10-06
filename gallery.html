@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="Keywords" content="ИМА,Информационно Молодежное Агенство г.Шарыпово, информационно молодежное агенство шарыпово">
+ <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
+ <link rel="stylesheet" type="text/css" href="css/style.css" />
+<script src="js/script.js"></script>
+<title>Информационно Молодежное Агенство г. Шарыпово</title>
+<script>	
+    var BottomPosition = 0; // положение страницы
+    var BottomFlag = false; // флаг для отображения кнопки 
+    var AnimateFlag = false;// Флаг для выполнения анимации
+ 
+        $(document).ready(function() {
+            $('.inTop').click(function() {  // клик по кнопке 
+                AnimateFlag = true; // выполняется анимация
+                if(BottomFlag) { // если нажата кнопка 
+                    $("body,html").animate({"scrollTop":BottomPosition}, 200, function() { // ...происходит возврат в нужное место страницы со скоростью 200
+                        AnimateFlag = false; // закончилось выполнение анимации
+                    });
+                BottomFlag = false; // заменяем кнопку
+                $('.inTop span').html('Вверх');
+                }
+                else { // если нажата кнопка 
+                    $("body,html").animate({"scrollTop":0}, 200, function() { // ...происходит возврат в начало страницы со скоростью 200
+                        AnimateFlag = false;
+                    });
+                    BottomPosition = $(window).scrollTop();  // запоминаем, до какой позиции была прокручена страница
+                    BottomFlag = true; // показываем кнопку
+                    $('.inTop span').html('Вниз');
+                }
+            });
+ 
+            // осуществляем проверку при прокручивании страницы:
+ 
+            $(window).scroll(function(event) {
+                var countScroll = $(window).scrollTop();
+                if (countScroll > 200 && !AnimateFlag) { // если пользователь промотал более 200 пикселей...
+                    $('.inTop').show(); // ...показываем кнопку 
+                    if(BottomFlag) {
+                        BottomFlag = false;
+                        $('.inTop span').html('Вверх');
+                    }
+                }
+                else {
+                    if(!BottomFlag) {
+                        $('.inTop').hide(); // в других случаях прячем кнопку, если только это не кнопка 
+                    }
+                }
+            });
+        });
+</script>
+</head>
+
+<body>
+<div class="karkas">
+  <div class="header">
+  <a href="index.html"><img class="logo" src="img/logo.png"/></a>
+  <ul class="menu">
+    <li><a href="index.html">ГЛАВНАЯ</a></li>
+    <li><a href="about.html">О НАС</a></li>
+    <li><a href="events.html">НАШИ МЕРОПРИЯТИЯ</a></li>
+    <li><a href="directions.html">НАШИ НАПРАВЛЕНИЯ</a></li>
+    <li><a href="contacts.html">КОНТАКТЫ</a></li>
+    <li><a href="gallery.html">ГАЛЕРЕЯ</a></li>
+  </ul>
+  </div>
+  <div class="content-z">
+  <h1>Галерея</h1>
+  </div>
+  <div class="content-gal">
+  <a name="ancor1"><h2>Территория 2020</h2></a>
+<div class="gallery">
+<a tabindex="1"><img src="img/gal1.jpg"></a>
+<a tabindex="2"><img src="img/gal2.jpg"></a>
+<a tabindex="3"><img src="img/gal3.jpg"></a>
+<a tabindex="4"><img src="img/gal4.jpg"></a>
+<a tabindex="5"><img src="img/gal5.jpg"></a>
+<a tabindex="9"><img src="img/gal0.jpg"></a>
+</div>
+<hr />
+<a name="ancor2"><h2>Сибирский щит</h2></a>
+<div class="gallery">
+<a tabindex="6"><img src="img/gal6.jpg"></a>
+<a tabindex="7"><img src="img/gal7.jpg"></a>
+<a tabindex="8"><img src="img/gal8.jpg"></a>
+<a tabindex="9"><img src="img/gal9.jpg"></a>
+<a tabindex="9"><img src="img/gal10.jpg"></a>
+<a tabindex="9"><img src="img/gal11.jpg"></a>
+</div>
+<hr />
+<a name="ancor3"><h2>День Мира</h2></a>
+<div class="gallery">
+<a tabindex="6"><img src="img/gal12.jpg"></a>
+<a tabindex="7"><img src="img/gal13.jpg"></a>
+<a tabindex="8"><img src="img/gal14.jpg"></a>
+</div>
+<hr />
+<a name="ancor4"><h2>Кросс нации</h2></a>
+<div class="gallery">
+<a tabindex="6"><img src="img/gal15.jpg"></a>
+<a tabindex="7"><img src="img/gal16.jpg"></a>
+<a tabindex="8"><img src="img/gal17.jpg"></a>
+</div>
+</div>
+<div class="footer">
+   <p class="copy">Copyright 2017 IMA. All Rights Reserved</p>
+   <p class="social">
+   <a href="https://vk.com/imasharypovo"><img src="img/vk.png" width="40" /></a>
+   <a href="https://my.mail.ru/mail/ima_43/?browse=messages"><img src="img/mail.png" width="40" /></a>
+   </p>
+   </div>
+   </div>
+        <div class="inTop"><span>Вверх</span></div>
+</div>
+
+</body>
+</html>

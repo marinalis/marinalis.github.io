@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="Keywords" content="ИМА,Информационно Молодежное Агенство г.Шарыпово, информационно молодежное агенство шарыпово">
+ <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
+ <link rel="stylesheet" type="text/css" href="css/style.css" />
+<title>Информационно Молодежное Агенство г. Шарыпово</title>
+<script src="js/script.js"></script>
+<link href="css/allinone_contentSlider.css" rel="stylesheet" type="text/css">
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/allinone_contentSlider.js" type="text/javascript"></script>
+<script>		jQuery(function() {
+			jQuery('#allinone_contentSlider_surprise').allinone_contentSlider({
+				skin: 'surprise',	
+			width: 960,	
+			height: 384,	
+			autoHideBottomNav:false,	
+			showPreviewThumbs:false,	
+			autoHideNavArrows:false	
+		});	
+			var BottomPosition = 0; // положение страницы
+    var BottomFlag = false; // флаг для отображения кнопки GO TO BOTTOM
+    var AnimateFlag = false;// Флаг для выполнения анимации
+ 
+        $(document).ready(function() {
+            $('.inTop').click(function() {  // клик по кнопке GO TO TOP/GO TO BOTTOM
+                AnimateFlag = true; // выполняется анимация
+                if(BottomFlag) { // если нажата кнопка GO TO BOTTOM...
+                    $("body,html").animate({"scrollTop":BottomPosition}, 200, function() { // ...происходит возврат в нужное место страницы со скоростью 200
+                        AnimateFlag = false; // закончилось выполнение анимации
+                    });
+                BottomFlag = false; // заменяем кнопку
+                $('.inTop span').html('Вверх');
+                }
+                else { // если нажата кнопка GO TO TOP...
+                    $("body,html").animate({"scrollTop":0}, 200, function() { // ...происходит возврат в начало страницы со скоростью 200
+                        AnimateFlag = false;
+                    });
+                    BottomPosition = $(window).scrollTop();  // запоминаем, до какой позиции была прокручена страница
+                    BottomFlag = true; // показываем кнопку GO TO BOTTOM
+                    $('.inTop span').html('Вниз');
+                }
+            });
+ 
+            // осуществляем проверку при прокручивании страницы:
+ 
+            $(window).scroll(function(event) {
+                var countScroll = $(window).scrollTop();
+                if (countScroll > 200 && !AnimateFlag) { // если пользователь промотал более 200 пикселей...
+                    $('.inTop').show(); // ...показываем кнопку GO TO TOP
+                    if(BottomFlag) {
+                        BottomFlag = false;
+                        $('.inTop span').html('Вверх');
+                    }
+                }
+                else {
+                    if(!BottomFlag) {
+                        $('.inTop').hide(); // в других случаях прячем кнопку, если только это не кнопка GO TO BOTTOM
+                    }
+                }
+            });
+        });	
+		});						
+</script>
+
+
+</head>
+
+<body>
+<div class="karkas">
+  <div class="header">
+  <a href="index.html"><img class="logo" src="img/logo.png"/></a>
+  <ul class="menu">
+    <li><a href="index.html">ГЛАВНАЯ</a></li>
+    <li><a href="about.html">О НАС</a></li>
+    <li><a href="events.html">НАШИ МЕРОПРИЯТИЯ</a></li>
+    <li><a href="directions.html">НАШИ НАПРАВЛЕНИЯ</a></li>
+    <li><a href="contacts.html">КОНТАКТЫ</a></li>
+    <li><a href="gallery.html">ГАЛЕРЕЯ</a></li>
+  </ul>
+  </div>
+  
+  <div style="width:1000px; margin: 0 0px ; padding:10px 0 0 0;">
+		<div id="allinone_contentSlider_surprise">
+                <ul class="allinone_contentSlider_list">
+                    <li data-text-id="#allinone_contentSlider_photoText1"></li>
+                    <li data-text-id="#allinone_contentSlider_photoText2"></li>
+                    <li data-text-id="#allinone_contentSlider_photoText3"></li>
+                    <li data-text-id="#allinone_contentSlider_photoText6"></li>
+                </ul>
+                                                                    <!-- TEXTS -->
+              	<div id="allinone_contentSlider_photoText1" class="allinone_contentSlider_texts">
+                    <div class="allinone_contentSlider_text_line" data-initial-left="150" data-initial-top="10" data-final-left="30" data-final-top="10" data-duration="0.5" data-fade-start="0" data-delay="1.1"><img src="img/slider1.jpg" alt=""/></div>
+                    <div class="allinone_contentSlider_text_line textElement11_surprise" data-initial-left="0" data-initial-top="25" data-final-left="380" data-final-top="25" data-duration="0.5" data-fade-start="0" data-delay="0.3">Территория 2020 </div>
+                    <div class="allinone_contentSlider_text_line textElement12_surprise" data-initial-left="0" data-initial-top="50" data-final-left="378" data-final-top="50" data-duration="0.5" data-fade-start="0" data-delay="0.5">Осенняя сессия </div>
+		</div>
+
+                <div id="allinone_contentSlider_photoText2" class="allinone_contentSlider_texts">
+                    <div class="allinone_contentSlider_text_line" data-initial-left="150" data-initial-top="10" data-final-left="30" data-final-top="10" data-duration="0.5" data-fade-start="0" data-delay="1.1"><img src="#" border="0" alt=""/></div>
+                    <div class="allinone_contentSlider_text_line textElement22_surprise" data-initial-left="378" data-initial-top="75" data-final-left="50" data-final-top="75" data-duration="0.5" data-fade-start="0" data-delay="0.5">Сибирский щит</div>
+                     
+		</div>
+
+		<div id="allinone_contentSlider_photoText3" class="allinone_contentSlider_texts">
+               	    
+                    <div  class="allinone_contentSlider_text_line textElement32r_surprise" data-initial-left="77" data-initial-top="150" data-final-left="77" data-final-top="45" data-duration="0.5" data-fade-start="0.7" data-delay="1.1">День Мира!</div>
+                    <div  class="allinone_contentSlider_text_line" data-initial-left="150" data-initial-top="10" data-final-left="30" data-final-top="10" data-duration="0.5" data-fade-start="0" data-delay="0.0"><img src="#" alt=""/></div>
+
+                </div>
+
+                <div id="allinone_contentSlider_photoText6" class="allinone_contentSlider_texts">
+                    <div  class="allinone_contentSlider_text_line textElement32r_surprise" data-initial-left="77" data-initial-top="150" data-final-left="77" data-final-top="45" data-duration="0.5" data-fade-start="0.7" data-delay="1.1">Кросс нации</div>
+                    	<div  class="allinone_contentSlider_text_line" data-initial-left="150" data-initial-top="10" data-final-left="30" data-final-top="10" data-duration="0.5" data-fade-start="0" data-delay="0.0"><img src="#" alt=""/></div>
+                    </div>
+		</div>
+	</div>
+    <br /><br />
+
+
+    <div class="content-z">
+    <h2>Новости</h2>
+    </div>
+        <div class="content">
+        <img src="img/nov1.jpg" width="500" alt="" />
+        <br />
+        <h3>Территория 2020</h3>
+        <br />
+        <p align="left">Ну а у нас стартовала проектная школа "Территория 2020"! Хочешь сделать что-то полезное? Тогда тебе к нам! Тренер Оксана Захарова научит. 
+        Смотрим первые фото 😊</p>
+        <br />
+        <p>Фото тут: <a href="gallery#ancor1.html">Территория 2020</a> </p>
+        <hr />
+        <br />
+        
+        <img src="img/nov1.jpg" width="500" alt="" />
+        <br />
+        <h3>Сибирский щит</h3>
+        <br />
+        <p align="left">23 сентября в в спорткомплексах «Надежда» и «Сибирь» состоялся городской этап военно-патриотический игры «Сибирский щит». г.Шарыпово .
+         Планировалось проведение военно-спортивной игры «Наследники победителей». Однако, сейчас она окончательно вошла в структуру краевой военно-патриотической игры 
+         и поменяла название. </p>
+        <br />
+        <p>Фото тут: <a href="gallery.html#ancor2">Сибирский щит</a> </p>
+        <hr />
+        <br />
+        
+        <img src="img/nov1.jpg" width="500" alt="" />
+        <br />
+        <h3>День Мира</h3>
+        <br />
+        <p align="left">Волонтеры Победы г. Шарыпово приглашают всех желающих принять участие в акции "Голубь мира", организованной в честь международного Дня мира! 
+         Участники акции выпустят в небо белые шары с голубями, как символ мирных намерений 21 сентября в 13:00 в парке Белом.</p>
+        <br />
+        <p>Фото тут: <a href="gallery.html#ancor3">День Мира</a> </p>
+        <hr />
+        <br />
+        
+        <img src="img/nov1.jpg" width="500" alt="" />
+        <br />
+        <h3>Крос нации</h3>
+        <br />
+        <p align="left">16 сентября состоялся городской массовый забег, посвященный Всероссийскому дню Бега "КРОСС НАЦИИ".<br />
+
+
+Дистанции в городе Шарыпово: <br />
+500 м. - Девочки и мальчики (2003 г.р. и младше) <br />
+1 500м. - Девушки и юноши (2000 г.р. - 2002 г.р.) <br />
+3 000м. - Женщины и мужчины (1999 г.р. и старше)<br /> 
+
+Программа: <br />
+
+10:00-10:45 - регистрация участников <br />
+
+10:45-11:00 - официальное открытие <br />
+
+11:00 - старт дистанция 500 м <br />
+
+11:30 - старт дистанция 1 500 м <br />
+
+12:00 - старт дистанция 3 000 м <br />
+
+13:00 - 13:30 - Церемония награждения победителей и призеров <br />
+
+13:30-16:00 - Церемония закрытия <br />
+
+</p>
+        <br />
+        <p>Фото тут: <a href="gallery.html#ancor4">Крос нации</a> </p>
+        
+        <br />
+        </div>
+        <div class="inTop"><span>Вверх</span></div>
+    
+    
+   <div class="footer">
+   <p class="copy">Copyright 2017 IMA. All Rights Reserved</p>
+   <p class="social">
+   <a href="https://vk.com/imasharypovo"><img src="img/vk.png" width="40" /></a>
+   <a href="https://my.mail.ru/mail/ima_43/?browse=messages"><img src="img/mail.png" width="40" /></a>
+   </p>
+   </div>
+</div>
+
+</body>
+</html>
